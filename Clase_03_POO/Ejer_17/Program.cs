@@ -1,10 +1,10 @@
-﻿namespace Ejer_10
+﻿namespace Ejer_17
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.Title = "Ejercicio N°10";
+            Console.WriteLine("Hello, World!");
         }
     }
 }
