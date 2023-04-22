@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejer_16", "Ejer_01\Ejer_16.csproj", "{7BD094FD-F6C1-47AC-B226-D640969044A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejer_17", "Ejer_17\Ejer_17.csproj", "{56B95DEA-4EEF-4115-9A97-9D45A5D4F9FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_17", "Ejer_17\Ejer_17.csproj", "{56B95DEA-4EEF-4115-9A97-9D45A5D4F9FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejer_18", "Ejer_18\Ejer_18.csproj", "{7C17A20D-7C71-4527-8E4A-0DBB9D97C8AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_18", "Ejer_18\Ejer_18.csproj", "{7C17A20D-7C71-4527-8E4A-0DBB9D97C8AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_16", "Ejer_16\Ejer_16.csproj", "{E1692C37-DFC9-441B-A365-B84BB89BD2A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{BE98F772-86D8-4724-9A4F-CEB42E4B290D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7BD094FD-F6C1-47AC-B226-D640969044A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7BD094FD-F6C1-47AC-B226-D640969044A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7BD094FD-F6C1-47AC-B226-D640969044A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7BD094FD-F6C1-47AC-B226-D640969044A4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{56B95DEA-4EEF-4115-9A97-9D45A5D4F9FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{56B95DEA-4EEF-4115-9A97-9D45A5D4F9FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56B95DEA-4EEF-4115-9A97-9D45A5D4F9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +25,14 @@ Global
 		{7C17A20D-7C71-4527-8E4A-0DBB9D97C8AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C17A20D-7C71-4527-8E4A-0DBB9D97C8AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C17A20D-7C71-4527-8E4A-0DBB9D97C8AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1692C37-DFC9-441B-A365-B84BB89BD2A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1692C37-DFC9-441B-A365-B84BB89BD2A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1692C37-DFC9-441B-A365-B84BB89BD2A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1692C37-DFC9-441B-A365-B84BB89BD2A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE98F772-86D8-4724-9A4F-CEB42E4B290D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE98F772-86D8-4724-9A4F-CEB42E4B290D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE98F772-86D8-4724-9A4F-CEB42E4B290D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE98F772-86D8-4724-9A4F-CEB42E4B290D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

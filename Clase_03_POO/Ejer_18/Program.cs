@@ -1,10 +1,12 @@
-﻿namespace Ejer_18
+﻿using Entidades;
+
+namespace Ejer_18
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.Title = "Ejercicio N°18";
         }
     }
 }
