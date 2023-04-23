@@ -5,11 +5,13 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejer_20", "Ejer_20\Ejer_20.csproj", "{570A4446-2AE7-4595-8590-9B42B9A2D85A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_19", "Ejer_19\Ejer_19.csproj", "{381CBAD2-62C2-4CF7-854D-2224B90D76CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejer_19", "Ejer_19\Ejer_19.csproj", "{381CBAD2-62C2-4CF7-854D-2224B90D76CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{E3EA0414-82F5-4969-A923-9A74CEE77365}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Entidades.csproj", "{E3EA0414-82F5-4969-A923-9A74CEE77365}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_21", "Ejer_21\Ejer_21.csproj", "{2A17E681-AE84-42AF-A58E-CA47A5D5EC9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejer_21", "Ejer_21\Ejer_21.csproj", "{2A17E681-AE84-42AF-A58E-CA47A5D5EC9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_22", "Ejer_22\Ejer_22.csproj", "{2E841503-98BD-45BF-BC96-5A91395A8420}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2A17E681-AE84-42AF-A58E-CA47A5D5EC9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A17E681-AE84-42AF-A58E-CA47A5D5EC9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A17E681-AE84-42AF-A58E-CA47A5D5EC9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E841503-98BD-45BF-BC96-5A91395A8420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E841503-98BD-45BF-BC96-5A91395A8420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E841503-98BD-45BF-BC96-5A91395A8420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E841503-98BD-45BF-BC96-5A91395A8420}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
