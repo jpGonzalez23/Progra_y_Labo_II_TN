@@ -10,67 +10,73 @@ namespace Entidades
     {
         private PuestoAtencion caja;
         private Queue<Cliente> clientes;
-
         private string nombre;
 
         private Negocio()
         {
             this.clientes = new Queue<Cliente>();
+            this.caja = new PuestoAtencion(PuestoAtencion.EPuesto.Caja1);
         }
 
-        public Negocio(string nombre)
+        public Negocio(string nombre) : this()
         {
             this.nombre = nombre;
         }
 
-        public Cliente cliente
+        public Cliente Cliente
         {
             get
             {
-                return this.clientes.Dequeue();
+                if(this.ClientesPendientes > 0)
+                {
+                    return this.clientes.Dequeue();
+                }
+                return null;
             }
-
             set
             {
-                if (this != value)
-                {
-
-                }
+                bool reult = this + value;
             }
         }
 
-        public static bool operator ==(Negocio n, Cliente cliente)
+        public int ClientesPendientes
         {
-            foreach (Cliente item in n.clientes)
+            get
             {
-                if (cliente == item)
+                return this.clientes.Count();
+            }
+        }
+
+        public static bool operator ==(Negocio n, Cliente c)
+        {
+            foreach(Cliente item in n.clientes) 
+            {
+                if(c == item)
                 {
                     return true;
                 }
             }
-
             return false;
         }
 
-        public static bool operator !=(Negocio n, Cliente cliente)
+        public static bool operator !=(Negocio n, Cliente c)
         {
-            return !(n == cliente);
+            return !(n == c);
         }
 
-        public static Negocio operator ~(Negocio n)
+        public static bool operator ~(Negocio n)
         {
-            return n.caja.Atender(n.cliente);
+            return n.caja.Atender(n.Cliente);
         }
 
-        public static bool operator +(Negocio n, Cliente cliente)
+        public static bool operator +(Negocio n, Cliente c)
         {
-            if (n != cliente)
+            if (n != c)
             {
-                n.clientes.Enqueue(cliente);
+                n.clientes.Enqueue(c);
                 return true;
             }
             return false;
         }
-
     }
 }

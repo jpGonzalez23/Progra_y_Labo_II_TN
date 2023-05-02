@@ -5,13 +5,15 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejer_26", "Ejer_01\Ejer_26.csproj", "{5334DD83-B4AB-44C7-9A24-16BD9BED4A51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_27", "Ejer_27\Ejer_27.csproj", "{692856D7-0C6B-40D8-8D68-A9673CC41A1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejer_27", "Ejer_27\Ejer_27.csproj", "{692856D7-0C6B-40D8-8D68-A9673CC41A1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_28", "Ejer_28\Ejer_28.csproj", "{2FA35B65-C2B8-4FF8-A959-B86794E46A78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejer_28", "Ejer_28\Ejer_28.csproj", "{2FA35B65-C2B8-4FF8-A959-B86794E46A78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{EFFB8B67-8FB4-473B-87E0-297D2249B9F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Entidades.csproj", "{EFFB8B67-8FB4-473B-87E0-297D2249B9F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_29", "Ejer_29\Ejer_29.csproj", "{C0ABFD4A-5DF9-49F9-B7DE-B7775E684810}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejer_29", "Ejer_29\Ejer_29.csproj", "{C0ABFD4A-5DF9-49F9-B7DE-B7775E684810}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_31", "Ejer_31\Ejer_31.csproj", "{E0A63219-667B-4570-81FF-BA0DB157892D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{C0ABFD4A-5DF9-49F9-B7DE-B7775E684810}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0ABFD4A-5DF9-49F9-B7DE-B7775E684810}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0ABFD4A-5DF9-49F9-B7DE-B7775E684810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0A63219-667B-4570-81FF-BA0DB157892D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0A63219-667B-4570-81FF-BA0DB157892D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0A63219-667B-4570-81FF-BA0DB157892D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0A63219-667B-4570-81FF-BA0DB157892D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
