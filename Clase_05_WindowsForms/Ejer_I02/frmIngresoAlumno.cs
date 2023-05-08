@@ -1,3 +1,5 @@
+using Entidades;
+
 namespace Ejer_I02
 {
     public partial class frmIngresoAlumno : Form
@@ -7,7 +9,7 @@ namespace Ejer_I02
             InitializeComponent();
         }
 
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        private void btnIngresar_Click(object sender, EventArgs e)
         {
 
         }
