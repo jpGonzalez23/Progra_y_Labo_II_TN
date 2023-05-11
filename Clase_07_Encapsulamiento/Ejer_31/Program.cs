@@ -1,12 +1,13 @@
 ﻿using Entidades;
 
-namespace Ejer_01
+namespace Ejer_31
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             Console.Title = "Ejercicio N°31";
+
             Cliente c1 = new Cliente(1, "Lautaro");
             Cliente c2 = new Cliente(2, "Mauricio");
             Cliente c3 = new Cliente(3, "Esteban");

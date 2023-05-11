@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_34", "Ejer_34\Ejer_34.csproj", "{3A98902B-2F82-4ADC-8C45-4568179FE750}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejer_34", "Ejer_34\Ejer_34.csproj", "{3A98902B-2F82-4ADC-8C45-4568179FE750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{D086E153-7A39-463A-96AC-A0501CFF9A31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Entidades.csproj", "{D086E153-7A39-463A-96AC-A0501CFF9A31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_35", "Ejer_35\Ejer_35.csproj", "{2A361F01-F84F-4218-8E5B-A9885A285D28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_36", "Ejer_36\Ejer_36.csproj", "{F934B034-82F0-47B7-A15B-6E0F7F03AC82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_37", "Ejer_37\Ejer_37.csproj", "{89CB2693-FB00-4DE1-9F8F-709D89D5B4EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{D086E153-7A39-463A-96AC-A0501CFF9A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D086E153-7A39-463A-96AC-A0501CFF9A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D086E153-7A39-463A-96AC-A0501CFF9A31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A361F01-F84F-4218-8E5B-A9885A285D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A361F01-F84F-4218-8E5B-A9885A285D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A361F01-F84F-4218-8E5B-A9885A285D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A361F01-F84F-4218-8E5B-A9885A285D28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F934B034-82F0-47B7-A15B-6E0F7F03AC82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F934B034-82F0-47B7-A15B-6E0F7F03AC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F934B034-82F0-47B7-A15B-6E0F7F03AC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F934B034-82F0-47B7-A15B-6E0F7F03AC82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89CB2693-FB00-4DE1-9F8F-709D89D5B4EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89CB2693-FB00-4DE1-9F8F-709D89D5B4EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89CB2693-FB00-4DE1-9F8F-709D89D5B4EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89CB2693-FB00-4DE1-9F8F-709D89D5B4EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
