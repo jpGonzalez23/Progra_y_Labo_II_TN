@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             gbAltaAlumno = new GroupBox();
-            txtDNIAlumno = new TextBox();
-            txtApellidoAlumno = new TextBox();
-            txtNombreAlumno = new TextBox();
-            btnCrearAlumno = new Button();
-            lblDNIAlumno = new Label();
-            lblApellidoAlumno = new Label();
             lblNombreAlumno = new Label();
+            lblApellidoAlumno = new Label();
+            lblDNIAlumno = new Label();
+            btnCrearAlumno = new Button();
+            txtNombreAlumno = new TextBox();
+            txtApellidoAlumno = new TextBox();
+            txtDNIAlumno = new TextBox();
             lstAlumnosCreados = new ListBox();
             gbAsignarMateria = new GroupBox();
+            btnAsignarMateria = new Button();
+            cmbMaterias = new ComboBox();
             lstAlumnosInscriptosProgra = new ListBox();
-            lsbAlumnosInscriptosLabo = new ListBox();
+            lstAlumnosInscriptosLabo = new ListBox();
             label1 = new Label();
             lblInscripcionProgra = new Label();
             lblInscriptosLabo = new Label();
-            cbMaterias = new ComboBox();
-            btnAsignarMateria = new Button();
             gbAltaAlumno.SuspendLayout();
             gbAsignarMateria.SuspendLayout();
             SuspendLayout();
@@ -65,45 +65,14 @@
             gbAltaAlumno.TabStop = false;
             gbAltaAlumno.Text = "Alta ALumno";
             // 
-            // txtDNIAlumno
+            // lblNombreAlumno
             // 
-            txtDNIAlumno.Location = new Point(20, 65);
-            txtDNIAlumno.Name = "txtDNIAlumno";
-            txtDNIAlumno.Size = new Size(100, 23);
-            txtDNIAlumno.TabIndex = 1;
-            // 
-            // txtApellidoAlumno
-            // 
-            txtApellidoAlumno.Location = new Point(126, 65);
-            txtApellidoAlumno.Name = "txtApellidoAlumno";
-            txtApellidoAlumno.Size = new Size(100, 23);
-            txtApellidoAlumno.TabIndex = 2;
-            // 
-            // txtNombreAlumno
-            // 
-            txtNombreAlumno.Location = new Point(232, 65);
-            txtNombreAlumno.Name = "txtNombreAlumno";
-            txtNombreAlumno.Size = new Size(100, 23);
-            txtNombreAlumno.TabIndex = 3;
-            // 
-            // btnCrearAlumno
-            // 
-            btnCrearAlumno.AutoSize = true;
-            btnCrearAlumno.Location = new Point(99, 130);
-            btnCrearAlumno.Name = "btnCrearAlumno";
-            btnCrearAlumno.Size = new Size(154, 25);
-            btnCrearAlumno.TabIndex = 4;
-            btnCrearAlumno.Text = "Crear Alumno";
-            btnCrearAlumno.UseVisualStyleBackColor = true;
-            // 
-            // lblDNIAlumno
-            // 
-            lblDNIAlumno.AutoSize = true;
-            lblDNIAlumno.Location = new Point(20, 47);
-            lblDNIAlumno.Name = "lblDNIAlumno";
-            lblDNIAlumno.Size = new Size(30, 15);
-            lblDNIAlumno.TabIndex = 1;
-            lblDNIAlumno.Text = "DNI:";
+            lblNombreAlumno.AutoSize = true;
+            lblNombreAlumno.Location = new Point(232, 47);
+            lblNombreAlumno.Name = "lblNombreAlumno";
+            lblNombreAlumno.Size = new Size(56, 15);
+            lblNombreAlumno.TabIndex = 6;
+            lblNombreAlumno.Text = "NOMBRE";
             // 
             // lblApellidoAlumno
             // 
@@ -114,14 +83,46 @@
             lblApellidoAlumno.TabIndex = 5;
             lblApellidoAlumno.Text = "APELLIDO";
             // 
-            // lblNombreAlumno
+            // lblDNIAlumno
             // 
-            lblNombreAlumno.AutoSize = true;
-            lblNombreAlumno.Location = new Point(232, 47);
-            lblNombreAlumno.Name = "lblNombreAlumno";
-            lblNombreAlumno.Size = new Size(56, 15);
-            lblNombreAlumno.TabIndex = 6;
-            lblNombreAlumno.Text = "NOMBRE";
+            lblDNIAlumno.AutoSize = true;
+            lblDNIAlumno.Location = new Point(20, 47);
+            lblDNIAlumno.Name = "lblDNIAlumno";
+            lblDNIAlumno.Size = new Size(30, 15);
+            lblDNIAlumno.TabIndex = 1;
+            lblDNIAlumno.Text = "DNI:";
+            // 
+            // btnCrearAlumno
+            // 
+            btnCrearAlumno.AutoSize = true;
+            btnCrearAlumno.Location = new Point(99, 130);
+            btnCrearAlumno.Name = "btnCrearAlumno";
+            btnCrearAlumno.Size = new Size(154, 25);
+            btnCrearAlumno.TabIndex = 4;
+            btnCrearAlumno.Text = "Crear Alumno";
+            btnCrearAlumno.UseVisualStyleBackColor = true;
+            btnCrearAlumno.Click += btnCrearAlumno_Click;
+            // 
+            // txtNombreAlumno
+            // 
+            txtNombreAlumno.Location = new Point(232, 65);
+            txtNombreAlumno.Name = "txtNombreAlumno";
+            txtNombreAlumno.Size = new Size(100, 23);
+            txtNombreAlumno.TabIndex = 3;
+            // 
+            // txtApellidoAlumno
+            // 
+            txtApellidoAlumno.Location = new Point(126, 65);
+            txtApellidoAlumno.Name = "txtApellidoAlumno";
+            txtApellidoAlumno.Size = new Size(100, 23);
+            txtApellidoAlumno.TabIndex = 2;
+            // 
+            // txtDNIAlumno
+            // 
+            txtDNIAlumno.Location = new Point(20, 65);
+            txtDNIAlumno.Name = "txtDNIAlumno";
+            txtDNIAlumno.Size = new Size(100, 23);
+            txtDNIAlumno.TabIndex = 1;
             // 
             // lstAlumnosCreados
             // 
@@ -135,13 +136,31 @@
             // gbAsignarMateria
             // 
             gbAsignarMateria.Controls.Add(btnAsignarMateria);
-            gbAsignarMateria.Controls.Add(cbMaterias);
+            gbAsignarMateria.Controls.Add(cmbMaterias);
             gbAsignarMateria.Location = new Point(185, 269);
             gbAsignarMateria.Name = "gbAsignarMateria";
             gbAsignarMateria.Size = new Size(220, 169);
             gbAsignarMateria.TabIndex = 2;
             gbAsignarMateria.TabStop = false;
             gbAsignarMateria.Text = "Asignar Materia";
+            // 
+            // btnAsignarMateria
+            // 
+            btnAsignarMateria.Location = new Point(49, 108);
+            btnAsignarMateria.Name = "btnAsignarMateria";
+            btnAsignarMateria.Size = new Size(127, 42);
+            btnAsignarMateria.TabIndex = 9;
+            btnAsignarMateria.Text = "Asignar al alumno seleccionado";
+            btnAsignarMateria.UseVisualStyleBackColor = true;
+            btnAsignarMateria.Click += btnAsignarMateria_Click;
+            // 
+            // cmbMaterias
+            // 
+            cmbMaterias.FormattingEnabled = true;
+            cmbMaterias.Location = new Point(49, 39);
+            cmbMaterias.Name = "cmbMaterias";
+            cmbMaterias.Size = new Size(125, 23);
+            cmbMaterias.TabIndex = 8;
             // 
             // lstAlumnosInscriptosProgra
             // 
@@ -152,14 +171,14 @@
             lstAlumnosInscriptosProgra.Size = new Size(151, 169);
             lstAlumnosInscriptosProgra.TabIndex = 3;
             // 
-            // lsbAlumnosInscriptosLabo
+            // lstAlumnosInscriptosLabo
             // 
-            lsbAlumnosInscriptosLabo.FormattingEnabled = true;
-            lsbAlumnosInscriptosLabo.ItemHeight = 15;
-            lsbAlumnosInscriptosLabo.Location = new Point(637, 269);
-            lsbAlumnosInscriptosLabo.Name = "lsbAlumnosInscriptosLabo";
-            lsbAlumnosInscriptosLabo.Size = new Size(151, 169);
-            lsbAlumnosInscriptosLabo.TabIndex = 4;
+            lstAlumnosInscriptosLabo.FormattingEnabled = true;
+            lstAlumnosInscriptosLabo.ItemHeight = 15;
+            lstAlumnosInscriptosLabo.Location = new Point(637, 269);
+            lstAlumnosInscriptosLabo.Name = "lstAlumnosInscriptosLabo";
+            lstAlumnosInscriptosLabo.Size = new Size(151, 169);
+            lstAlumnosInscriptosLabo.TabIndex = 4;
             // 
             // label1
             // 
@@ -188,23 +207,6 @@
             lblInscriptosLabo.TabIndex = 7;
             lblInscriptosLabo.Text = "Inscriptos Labo:";
             // 
-            // cbMaterias
-            // 
-            cbMaterias.FormattingEnabled = true;
-            cbMaterias.Location = new Point(49, 39);
-            cbMaterias.Name = "cbMaterias";
-            cbMaterias.Size = new Size(125, 23);
-            cbMaterias.TabIndex = 8;
-            // 
-            // btnAsignarMateria
-            // 
-            btnAsignarMateria.Location = new Point(49, 108);
-            btnAsignarMateria.Name = "btnAsignarMateria";
-            btnAsignarMateria.Size = new Size(127, 42);
-            btnAsignarMateria.TabIndex = 9;
-            btnAsignarMateria.Text = "Asignar al alumno seleccionado";
-            btnAsignarMateria.UseVisualStyleBackColor = true;
-            // 
             // frnABMInscripcionAlumno
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -213,7 +215,7 @@
             Controls.Add(lblInscriptosLabo);
             Controls.Add(lblInscripcionProgra);
             Controls.Add(label1);
-            Controls.Add(lsbAlumnosInscriptosLabo);
+            Controls.Add(lstAlumnosInscriptosLabo);
             Controls.Add(lstAlumnosInscriptosProgra);
             Controls.Add(gbAsignarMateria);
             Controls.Add(lstAlumnosCreados);
@@ -221,6 +223,7 @@
             Name = "frnABMInscripcionAlumno";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inscripcion Alumno";
+            Load += frnABMInscripcionAlumno_Load;
             gbAltaAlumno.ResumeLayout(false);
             gbAltaAlumno.PerformLayout();
             gbAsignarMateria.ResumeLayout(false);
@@ -232,14 +235,14 @@
 
         private GroupBox gbAltaAlumno;
         private GroupBox gbAsignarMateria;
-       
+
         private Label lblNombreAlumno;
         private Label lblApellidoAlumno;
         private Label lblDNIAlumno;
         private Label label1;
         private Label lblInscripcionProgra;
         private Label lblInscriptosLabo;
-        
+
         private Button btnCrearAlumno;
         private Button btnAsignarMateria;
 
@@ -249,9 +252,9 @@
 
         private ListBox lstAlumnosCreados;
         private ListBox lstAlumnosInscriptosProgra;
-        private ListBox lsbAlumnosInscriptosLabo;
+        private ListBox lstAlumnosInscriptosLabo;
 
-        private ComboBox cbMaterias;
+        private ComboBox cmbMaterias;
 
     }
 }
