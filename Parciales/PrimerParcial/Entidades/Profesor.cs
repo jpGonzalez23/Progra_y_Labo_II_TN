@@ -25,22 +25,24 @@ namespace Entidades
         {
             get
             {
-                StringBuilder sb = new StringBuilder();
-
-                sb.AppendLine($"Profesor - {base.MostrarDatos()}");
-                sb.AppendLine($"Email - {this.email}");
-
-                return sb.ToString();
+                return $"Profesor - {this.MostrarDatos()}";
             }
+        }
+
+        protected override string MostrarDatos()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(base.MostrarDatos());
+            sb.AppendLine($"Email - {this.email}");
+            sb.AppendLine($"Materia asignada: {this.materiaAsignada}");
+
+            return sb.ToString();
         }
 
         public bool Evaluar(Alumno alumno)
         {
-            if(this.materiaAsignada == alumno)
-            {
-                return true;
-            }
-            return false;
+            return alumno[this.materiaAsignada].Count > 0;
         }
 
         public override string ToString()

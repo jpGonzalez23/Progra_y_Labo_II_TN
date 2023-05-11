@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Runtime.InteropServices.ObjectiveC;
+using System.Text;
 
 namespace Entidades
 {
@@ -8,6 +9,10 @@ namespace Entidades
         private string apellido;
         protected int dni;
 
+        /// <summary>
+        /// Constructor de la clase persona
+        /// </summary>
+        /// <param name="dni"></param>
         protected Persona(int dni)
         {
             this.dni = dni;
@@ -26,15 +31,10 @@ namespace Entidades
         }
         public string Apellido
         {
-            get
-            {
-                return this.apellido;
-            }
-            set
-            {
-                this.apellido = value;
-            }
+            get { return this.apellido; }
+            set { this.apellido = value; }
         }
+
         /// <summary>
         /// Metodo para mostrar los datos de la persona
         /// </summary>
@@ -62,14 +62,20 @@ namespace Entidades
             return !(p1 == p2);
         }
 
-        public override bool Equals(object? obj)
+        public override bool Equals(object obj)
         {
-            return obj is null ;
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Persona otraPersona = (Persona)obj;
+            return this.dni == otraPersona.dni;
         }
 
         public override int GetHashCode()
         {
-            return this.dni;
+            return this.dni.GetHashCode();
         }
     }
 }

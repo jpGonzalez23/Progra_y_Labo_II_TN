@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class Curso
     {
-        private List<Alumno> alumnoList;
+        private List<Persona> alumnos;
         private EMateria materias;
         private Persona profesor;
 
@@ -17,19 +17,19 @@ namespace Entidades
             this.profesor = profesor;
         }
 
-        public List<Alumno> Alumnos
+        public List<Persona> Alumnos
         {
             get
             {
-                return this.alumnoList;
+                return this.alumnos;
             }
         }
 
-        public Profesor Profesor
+        public Persona Profesor
         {
             get
             {
-                return ;
+                return this.profesor;
             }
             set
             {
@@ -39,18 +39,32 @@ namespace Entidades
 
         public static void EvaluarAlumnos(Curso curso)
         {
-
+            foreach (Alumno alumno in curso.alumnos)
+            {
+                if (alumno.Materias.Contains(curso.materias))
+                {
+                    curso.profesor.Evaluar(alumno);
+                }
+            }
         }
 
         public string InscribirAlumno(Alumno alumno)
         {
             StringBuilder sb = new StringBuilder();
 
-            if ()
+            if (this == alumno)
             {
-
+                sb.AppendLine($"Ya inscripto o no se pudo inscribir el alumno a la materias {this.materias}");
             }
-
+            else if (alumno + this.materias)
+            {
+                this.alumnos.Add(alumno);
+                sb.AppendLine($"Se inscribio al alumno a la materias {this.materias}\n{alumno}");
+            }
+            else
+            {
+                sb.AppendLine($"No se pudo inscribir el alumno a la materias {this.materias}");
+            }
 
             return sb.ToString();
         }
@@ -60,14 +74,21 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"Profesor: ");
+            sb.AppendLine($"Curso de {curso.materias}");
+            sb.AppendLine($"Profesor: {curso.profesor}");
+            sb.AppendLine("Alumnos:");
+
+            foreach (Alumno alumno in curso.alumnos)
+            {
+                sb.AppendLine(alumno.ToString());
+            }
 
             return sb.ToString();
         }
 
         public static bool operator ==(Curso curso, Alumno alumno)
         {
-            return ;
+            return curso.alumnos.Contains(alumno);
         }
 
         public static bool operator !=(Curso curso, Alumno alumno)
