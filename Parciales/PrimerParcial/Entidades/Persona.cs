@@ -35,6 +35,8 @@ namespace Entidades
             set { this.apellido = value; }
         }
 
+        public abstract string Informar { get; }
+
         /// <summary>
         /// Metodo para mostrar los datos de la persona
         /// </summary>
@@ -50,8 +52,6 @@ namespace Entidades
             return sb.ToString();
         }
 
-        public abstract string Informar { get; }
-
         public static bool operator ==(Persona p1, Persona p2)
         {
             return p1.dni == p2.dni;
@@ -62,15 +62,9 @@ namespace Entidades
             return !(p1 == p2);
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
-            if (obj == null || GetType() != obj.GetType())
-            {
-                return false;
-            }
-
-            Persona otraPersona = (Persona)obj;
-            return this.dni == otraPersona.dni;
+            return obj is not null && obj is Persona && (Persona)obj == this;
         }
 
         public override int GetHashCode()

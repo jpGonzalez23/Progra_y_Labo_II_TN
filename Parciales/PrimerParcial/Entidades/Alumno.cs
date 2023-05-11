@@ -21,63 +21,34 @@ namespace Entidades
             this.legajo = legajo;
         }
 
-        public override string Informar
-        {
-            get
-            {
-                string datos = MostrarDatos();
-
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine("Alumno -");
-                sb.Append(datos);
-
-                if (materiasAsignadas.Count > 0)
-                {
-                    sb.AppendLine("Materias inscriptas:");
-
-                    foreach (EMateria materia in materiasAsignadas.Keys)
-                    {
-                        sb.AppendLine($"- {materia}");
-                    }
-                }
-                else
-                {
-                    sb.AppendLine("No tiene materias inscriptas.");
-                }
-
-                return sb.ToString();
-            }
-        }
-
-
         public List<int> this[EMateria materia]
         {
             get
             {
-                if (materiasAsignadas.ContainsKey(materia))
+                if (this == materia)
                 {
-                    return materiasAsignadas[materia];
+                    return this.materiasAsignadas[materia];
                 }
-                else
-                {
-                    return null;
-                }
+                return null;
+            }
+        }
+        public override string Informar
+        {
+            get
+            {
+                return $"Alumno - {this.MostrarDatos()}";
             }
         }
 
         public bool RendirMateria(EMateria materia)
         {
-            if (materiasAsignadas.ContainsKey(materia))
+            if (this == materia)
             {
-                Random rnd = new Random();
-                int nota = rnd.Next(1, 11);
-                materiasAsignadas[materia].Add(nota);
+                Random random = new Random();
+                this[materia].Add(random.Next(1, 10));
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         protected override string MostrarDatos()
@@ -88,9 +59,9 @@ namespace Entidades
             sb.AppendLine($"Legajo del alumno: {this.legajo}");
             sb.AppendLine("Materias inscriptas:");
 
-            foreach (EMateria materia in materiasAsignadas.Keys)
+            foreach (EMateria materia in this.materiasAsignadas.Keys)
             {
-                sb.AppendLine($"- {materia}");
+                sb.AppendLine(materia.ToString());
             }
 
             return sb.ToString();
@@ -99,15 +70,9 @@ namespace Entidades
         public static implicit operator Alumno(string dni)
         {
             int dniInt;
-
-            if (!int.TryParse(dni, out dniInt))
-            {
-                return null;
-            }
-
+            int.TryParse(dni, out dniInt);
             Alumno alumno = new Alumno(dniInt);
             alumno.legajo = $"L-{alumno.GetHashCode()}";
-
             return alumno;
         }
 
@@ -139,9 +104,6 @@ namespace Entidades
             return $"Alumno - {this.legajo}";
         }
 
-        public override int GetHashCode()
-        {
-            return this.dni;
-        }
+
     }
 }

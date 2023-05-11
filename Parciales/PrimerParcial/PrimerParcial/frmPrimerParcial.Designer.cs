@@ -220,6 +220,8 @@
             Controls.Add(gbAsignarMateria);
             Controls.Add(lstAlumnosCreados);
             Controls.Add(gbAltaAlumno);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frnABMInscripcionAlumno";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inscripcion Alumno";

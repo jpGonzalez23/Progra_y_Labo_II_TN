@@ -12,10 +12,12 @@ namespace Entidades
         private EMateria materiaAsignada;
 
         public Profesor(int dni) : base(dni) { } 
+
         public Profesor(int dni, string email) : this(dni)
         {
             this.email = email;
         }
+
         public Profesor(int dni, string email, EMateria materiaAsignadas) : this(dni, email)
         {
             this.materiaAsignada = materiaAsignadas;
@@ -26,6 +28,18 @@ namespace Entidades
             get
             {
                 return $"Profesor - {this.MostrarDatos()}";
+            }
+        }
+
+        public EMateria Materia
+        {
+            get
+            {
+                return this.materiaAsignada;
+            }
+            set
+            {
+                this.materiaAsignada = value;
             }
         }
 
@@ -42,7 +56,7 @@ namespace Entidades
 
         public bool Evaluar(Alumno alumno)
         {
-            return alumno[this.materiaAsignada].Count > 0;
+            return alumno.RendirMateria(this.materiaAsignada);
         }
 
         public override string ToString()

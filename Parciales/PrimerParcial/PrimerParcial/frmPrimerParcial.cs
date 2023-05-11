@@ -15,7 +15,7 @@ namespace PrimerParcial
             InitializeComponent();
             profeLabo = new Profesor(99000123, "profesorLabo@email.com", EMateria.Laboratorio);
             profeProgra = new Profesor(99000123, "profeProga@email.com", EMateria.Programacion);
-            
+
             cursoProgramacion = new Curso((Profesor)profeProgra);
             cursoLaboratorio = new Curso((Profesor)profeLabo);
         }
