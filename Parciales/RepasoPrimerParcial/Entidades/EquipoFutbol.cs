@@ -11,7 +11,7 @@ namespace Entidades
         private bool jugadorEstrellas;
 
         public EquipoFutbol(string nombre) : base (nombre) { }
-        public EquipoFutbol(string nombre, bool jugadorEstrellas) : base (nombre)
+        public EquipoFutbol(string nombre, bool jugadorEstrellas) : this(nombre)
         {
             this.jugadorEstrellas = false;
         }

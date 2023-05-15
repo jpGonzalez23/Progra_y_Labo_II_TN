@@ -56,7 +56,7 @@ namespace Entidades
             }
         }
 
-        public string MostrarTorneo(Competencia competencia)
+        public static string MostrarTorneo(Competencia competencia)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Nombre: {competencia.Nombre}");

@@ -14,7 +14,7 @@ namespace Entidades
 
         public EquipoBasket (string nombre) : base (nombre) { }
 
-        public EquipoBasket(string nombre, ELiga liga) : base (nombre) 
+        public EquipoBasket(string nombre, ELiga liga) : this (nombre) 
         {
             this.liga = ELiga.NBA;
         }
