@@ -166,10 +166,10 @@
             // 
             txtDniCliente.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtDniCliente.Location = new Point(12, 12);
+            txtDniCliente.MaxLength = 50;
             txtDniCliente.Name = "txtDniCliente";
             txtDniCliente.Size = new Size(175, 29);
             txtDniCliente.TabIndex = 0;
-            txtDniCliente.Text = "Dni del cliente";
             // 
             // FrmHamburgueseria
             // 
