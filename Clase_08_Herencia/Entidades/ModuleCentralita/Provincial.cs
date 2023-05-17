@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades.ModuleCentralita
 {
-    public class Provincia : Llamada
+    public class Provincial : Llamada
     {
         public enum ETipoFranja
         {
@@ -17,12 +17,14 @@ namespace Entidades.ModuleCentralita
 
         protected ETipoFranja franja;
 
-        public Provincia(ETipoFranja franja, Llamada llamada) : this("", franja, 5f, "")
+        public Provincial(ETipoFranja franja, Llamada llamada)
+            : this("", franja, 0, "")
         {
             this.franja = franja;
         }
 
-        public Provincia(string origen, ETipoFranja franja, float duracion, string destino) : base(duracion, destino, origen)
+        public Provincial(string origen, ETipoFranja franja, float duracion, string destino)
+            : base(duracion, destino, origen)
         {
 
         }
