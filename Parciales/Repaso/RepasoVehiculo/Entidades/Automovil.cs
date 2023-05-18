@@ -16,7 +16,8 @@ namespace Entidades
             Automovil.valorHora = 120;
         }
 
-        public Automovil(string marca, string patente, DateTime horaIngreso) : base(patente, horaIngreso)
+        public Automovil(string patente, DateTime horaIngreso, string marca) 
+            : base(patente, horaIngreso)
         {
             this.marca = marca;
         }
@@ -25,44 +26,38 @@ namespace Entidades
         {
             set
             {
-                if(value > 0)
+                if (value > 0)
                 {
-                    Automovil.valorHora = 0;
+                    Automovil.valorHora = value;
                 }
             }
         }
 
         public override double CostoEstadia
         {
-            get
-            {
-                return this.CargoDeEstacionamiento();
-            }
+            get { return this.CargoDeEstacionamiento(); }
         }
 
         public override string Descripcion
         {
-            get 
-            { 
-                return this.marca;  
-            }
+            get { return this.marca; }
         }
 
         protected override double CargoDeEstacionamiento()
         {
-            return base.CargoDeEstacionamiento() * Automovil.valorHora;
+            return base.CargoDeEstacionamiento() * Automovil.valorHora;   
         }
 
         protected override string MostrarDatos()
         {
-            StringBuilder mensaje = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
 
-            mensaje.AppendLine("*****AUTOMOVIL*****");
-            mensaje.AppendLine(base.MostrarDatos());
-            mensaje.AppendLine($"Marca: {this.Descripcion}");
+            sb.Append("***** AUTOMOVIL *****");
+            sb.AppendLine(base.MostrarDatos());
+            sb.Append($"Marca: {this.Descripcion}");
+            sb.AppendLine($"Cargo de estadia: {this.CargoDeEstacionamiento}");
 
-
-            return mensaje.ToString();
+            return sb.ToString();
         }
 
         public override string ToString()

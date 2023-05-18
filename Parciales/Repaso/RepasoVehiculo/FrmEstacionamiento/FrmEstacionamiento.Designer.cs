@@ -1,6 +1,6 @@
-﻿namespace RepasoPrimerParcial
+﻿namespace FrmEstacionamiento
 {
-    partial class frnEstacionamiento
+    partial class FrmEstacionamiento
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,145 +28,140 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnAgregarVehiculo = new Button();
-            cmbTipoVehiculo = new ComboBox();
             lblTipoVehiculo = new Label();
             lblPatente = new Label();
-            txtPatente = new TextBox();
             lblTipo = new Label();
+            cmbTipoVehiculo = new ComboBox();
             cmbTipoMoto = new ComboBox();
+            txtPatente = new TextBox();
             txtMarca = new TextBox();
-            lstVehiculos = new ListBox();
             txtNombreEstacionamiento = new TextBox();
+            lstVehiculos = new ListBox();
+            btnAgregar = new Button();
             SuspendLayout();
-            // 
-            // btnAgregarVehiculo
-            // 
-            btnAgregarVehiculo.Location = new Point(12, 350);
-            btnAgregarVehiculo.Name = "btnAgregarVehiculo";
-            btnAgregarVehiculo.Size = new Size(157, 47);
-            btnAgregarVehiculo.TabIndex = 0;
-            btnAgregarVehiculo.Text = "Agragar Vehiculo";
-            btnAgregarVehiculo.UseVisualStyleBackColor = true;
-            btnAgregarVehiculo.Click += btnAgregarVehiculo_Click;
-            // 
-            // cmbTipoVehiculo
-            // 
-            cmbTipoVehiculo.FormattingEnabled = true;
-            cmbTipoVehiculo.Location = new Point(121, 58);
-            cmbTipoVehiculo.Name = "cmbTipoVehiculo";
-            cmbTipoVehiculo.Size = new Size(121, 23);
-            cmbTipoVehiculo.TabIndex = 1;
-            cmbTipoVehiculo.SelectedIndexChanged += cmbTipoVehiculo_SelectedIndexChanged;
             // 
             // lblTipoVehiculo
             // 
             lblTipoVehiculo.AutoSize = true;
-            lblTipoVehiculo.Location = new Point(17, 66);
+            lblTipoVehiculo.Location = new Point(12, 15);
             lblTipoVehiculo.Name = "lblTipoVehiculo";
             lblTipoVehiculo.Size = new Size(78, 15);
-            lblTipoVehiculo.TabIndex = 2;
+            lblTipoVehiculo.TabIndex = 0;
             lblTipoVehiculo.Text = "Tipo Vehiculo";
             // 
             // lblPatente
             // 
             lblPatente.AutoSize = true;
-            lblPatente.Location = new Point(17, 116);
+            lblPatente.Location = new Point(12, 60);
             lblPatente.Name = "lblPatente";
             lblPatente.Size = new Size(47, 15);
-            lblPatente.TabIndex = 3;
+            lblPatente.TabIndex = 1;
             lblPatente.Text = "Patente";
-            // 
-            // txtPatente
-            // 
-            txtPatente.Location = new Point(121, 108);
-            txtPatente.Name = "txtPatente";
-            txtPatente.Size = new Size(121, 23);
-            txtPatente.TabIndex = 4;
             // 
             // lblTipo
             // 
             lblTipo.AutoSize = true;
-            lblTipo.Location = new Point(17, 160);
+            lblTipo.Location = new Point(12, 106);
             lblTipo.Name = "lblTipo";
             lblTipo.Size = new Size(30, 15);
-            lblTipo.TabIndex = 5;
+            lblTipo.TabIndex = 2;
             lblTipo.Text = "Tipo";
+            // 
+            // cmbTipoVehiculo
+            // 
+            cmbTipoVehiculo.FormattingEnabled = true;
+            cmbTipoVehiculo.Location = new Point(96, 15);
+            cmbTipoVehiculo.Name = "cmbTipoVehiculo";
+            cmbTipoVehiculo.Size = new Size(121, 23);
+            cmbTipoVehiculo.TabIndex = 3;
+            cmbTipoVehiculo.SelectedIndexChanged += cmbTipoVehiculo_SelectedIndexChanged;
             // 
             // cmbTipoMoto
             // 
             cmbTipoMoto.FormattingEnabled = true;
-            cmbTipoMoto.Location = new Point(121, 160);
+            cmbTipoMoto.Location = new Point(96, 103);
             cmbTipoMoto.Name = "cmbTipoMoto";
             cmbTipoMoto.Size = new Size(121, 23);
-            cmbTipoMoto.TabIndex = 6;
+            cmbTipoMoto.TabIndex = 4;
+            // 
+            // txtPatente
+            // 
+            txtPatente.Location = new Point(96, 57);
+            txtPatente.Name = "txtPatente";
+            txtPatente.Size = new Size(121, 23);
+            txtPatente.TabIndex = 5;
             // 
             // txtMarca
             // 
-            txtMarca.Location = new Point(248, 160);
+            txtMarca.Location = new Point(233, 103);
             txtMarca.Name = "txtMarca";
-            txtMarca.Size = new Size(110, 23);
-            txtMarca.TabIndex = 7;
+            txtMarca.Size = new Size(121, 23);
+            txtMarca.TabIndex = 6;
+            // 
+            // txtNombreEstacionamiento
+            // 
+            txtNombreEstacionamiento.Location = new Point(397, 15);
+            txtNombreEstacionamiento.Name = "txtNombreEstacionamiento";
+            txtNombreEstacionamiento.Size = new Size(305, 23);
+            txtNombreEstacionamiento.TabIndex = 7;
             // 
             // lstVehiculos
             // 
             lstVehiculos.FormattingEnabled = true;
             lstVehiculos.ItemHeight = 15;
-            lstVehiculos.Location = new Point(449, 108);
+            lstVehiculos.Location = new Point(397, 57);
             lstVehiculos.Name = "lstVehiculos";
-            lstVehiculos.Size = new Size(339, 289);
-            lstVehiculos.TabIndex = 9;
-            lstVehiculos.MouseDoubleClick += lstVehiculos_MouseDoubleClick;
+            lstVehiculos.Size = new Size(305, 139);
+            lstVehiculos.TabIndex = 8;
+            lstVehiculos.MouseClick += lstVehiculos_MouseClick;
             // 
-            // txtNombreEstacionamiento
+            // btnAgregar
             // 
-            txtNombreEstacionamiento.Location = new Point(449, 12);
-            txtNombreEstacionamiento.Multiline = true;
-            txtNombreEstacionamiento.Name = "txtNombreEstacionamiento";
-            txtNombreEstacionamiento.Size = new Size(339, 73);
-            txtNombreEstacionamiento.TabIndex = 10;
+            btnAgregar.Location = new Point(12, 165);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(112, 38);
+            btnAgregar.TabIndex = 9;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
-            // frnEstacionamiento
+            // FrmEstacionamiento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(796, 411);
-            Controls.Add(txtNombreEstacionamiento);
+            ClientSize = new Size(720, 233);
+            Controls.Add(btnAgregar);
             Controls.Add(lstVehiculos);
+            Controls.Add(txtNombreEstacionamiento);
             Controls.Add(txtMarca);
-            Controls.Add(cmbTipoMoto);
-            Controls.Add(lblTipo);
             Controls.Add(txtPatente);
+            Controls.Add(cmbTipoMoto);
+            Controls.Add(cmbTipoVehiculo);
+            Controls.Add(lblTipo);
             Controls.Add(lblPatente);
             Controls.Add(lblTipoVehiculo);
-            Controls.Add(cmbTipoVehiculo);
-            Controls.Add(btnAgregarVehiculo);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "frnEstacionamiento";
+            Name = "FrmEstacionamiento";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Estacionamiento";
-            Load += frnEstacionamiento_Load;
+            Load += FrmEstacionamiento_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button btnAgregarVehiculo;
-
-        private ListBox lstVehiculos;
-
         private Label lblTipoVehiculo;
         private Label lblPatente;
         private Label lblTipo;
-
-        private ComboBox cmbTipoMoto;
         private ComboBox cmbTipoVehiculo;
-
-        private TextBox txtNombreEstacionamiento;
+        private ComboBox cmbTipoMoto;
         private TextBox txtPatente;
         private TextBox txtMarca;
+        private TextBox txtNombreEstacionamiento;
+        private ListBox lstVehiculos;
+        private Button btnAgregar;
     }
 }
