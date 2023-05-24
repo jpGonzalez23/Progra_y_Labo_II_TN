@@ -17,15 +17,15 @@ namespace Entidades
 
         private ETipo tipo;
 
-        public Guarnicion() { }
-        public Guarnicion(ETipo tipo) : this()
+        public Guarnicion() : this(ETipo.PAPAS_FRITAS) { }
+        public Guarnicion(ETipo tipo) : base(tipo.ToString())
         {
-            this.tipo = ETipo.PAPAS_FRITAS;
+            this.tipo = tipo;
         }
 
         public static bool operator ==(Guarnicion g, EIngredientes ingredientes)
         {
-            if (ingredientes is EIngredientes.ADHERESO && ingredientes is EIngredientes.ADHERESO && ingredientes is EIngredientes.QUESO)
+            if (ingredientes is EIngredientes.ADHERESO || ingredientes is EIngredientes.ADHERESO || ingredientes is EIngredientes.QUESO)
             {
                 return true;
             }
@@ -54,24 +54,21 @@ namespace Entidades
 
         protected override string AgregarIngredientes(EIngredientes ingredientes)
         {
-            if (this.ingredientes.Contains(ingredientes))
+            if ((Comida) this != ingredientes && this == ingredientes) 
             {
-                return $"No se agrego {ingredientes} a su guarnición";
+                base.ingredientes.Add(ingredientes);
+                return "";
             }
-            else if (ingredientes == this.ingredientes)
-            {
-                this.ingredientes.Add(ingredientes);
-                return $"Se agrego {ingredientes} a su guarnición";
-            }
-            else
-            {
-                return $"No se agrego {ingredientes} a su guarnicion";
-            }
+            return "";
         }
 
         protected override double CalcularCosto()
         {
-            throw new NotImplementedException();
+            double costo = (int)this.tipo;
+
+            base.ingredientes.ForEach(i => costo += (costo * (int)i / 100));
+
+            return costo;
         }
 
         public static explicit operator Guarnicion(ETipo tipo)

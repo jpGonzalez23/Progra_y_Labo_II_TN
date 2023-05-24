@@ -25,14 +25,12 @@ namespace Entidades
 
         protected override string AgregarIngredientes(EIngredientes ingredientes)
         {
-            if (!base.ingredientes.Contains(ingredientes))
+            if (this != ingredientes)
             {
+                base.ingredientes.Add(ingredientes);
                 return $"Se agrego {ingredientes} a su hamburguesa";
             }
-            else
-            {
-                return $"No se puedo agregar {ingredientes} a su hamburguesa";
-            }
+            return $"No se puedo agregar {ingredientes} a su hamburguesa";
         }
 
         public override string ToString()
@@ -65,6 +63,8 @@ namespace Entidades
             {
                 Hamburguesa.costoBase += 500;
             }
+
+            base.ingredientes.ForEach(i => costo += (costo * (int)i / 100));
 
             return costo;
         }

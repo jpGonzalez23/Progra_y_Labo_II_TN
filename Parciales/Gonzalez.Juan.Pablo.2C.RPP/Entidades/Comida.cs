@@ -19,25 +19,23 @@ namespace Entidades
         protected List<EIngredientes> ingredientes;
         private string nombre;
 
-        protected Comida(string nombre)
+        protected Comida(string nombre) : this(nombre, new List<EIngredientes>()){ }
+        protected Comida(string nombre, List<EIngredientes> ingredientes) 
         {
+            this.ingredientes = ingredientes;
             this.nombre = nombre;
         }
-        protected Comida(string nombre, List<EIngredientes> ingredientes) : this(nombre)
-        {
-            this.ingredientes = new List<EIngredientes>();
-        }
 
-        public double Costo
+        public virtual double Costo
         {
             get { return this.CalcularCosto(); }
         }
 
-        public string Descripcion
+        public virtual string Descripcion
         {
             get
             {
-                return string.Join(',', this.ingredientes);
+                return this.MostrarDatos();
             }
         }
 
@@ -52,7 +50,7 @@ namespace Entidades
 
         protected abstract string AgregarIngredientes(EIngredientes ingredientes);
 
-        protected abstract double CalcularCosto(); 
+        protected abstract double CalcularCosto();
 
         protected virtual string MostrarDatos()
         {
@@ -81,12 +79,12 @@ namespace Entidades
 
         public static string operator +(Comida c, EIngredientes i)
         {
-            return c.ingredientes.Add(i);
+            return c.AgregarIngredientes(i);
         }
 
         public override bool Equals(object? obj)
         {
-            return obj is not null && obj is Comida && ((Comida)obj).Nombre == ((Comida)obj).Nombre;
+            return obj is not null && obj is Comida && ((Comida)obj).Nombre == this.nombre;
         }
     }
 }

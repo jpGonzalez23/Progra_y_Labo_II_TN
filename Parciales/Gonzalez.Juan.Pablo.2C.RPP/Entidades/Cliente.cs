@@ -24,27 +24,31 @@ namespace Entidades
 
         public static Cliente GetCliente(int dni)
         {
-            
+            return dni;
         }
 
         private double TotalAPagar
         {
             get 
             {
-                StringBuilder sb = new StringBuilder();
+                double costo = 0;
 
-                return sb.ToString();
+                this.menu.ForEach(c => totalAPagar += costo);
+
+                return costo.ToString();
             }
         }
 
         public Comida BuscarComida(Comida comida)
         {
-
+            return this.menu.Find(c => c.Equals(comida));
         }
 
-        public static Cliente operator +(Cliente cliente)
+        public static Cliente operator +(Cliente cliente, Comida comida)
         {
+            cliente.menu.Add(comida);
 
+            return cliente;
         }
 
 
@@ -61,7 +65,7 @@ namespace Entidades
 
         public static bool operator ==(Cliente cliente, Comida comida)
         {
-
+            return cliente.menu.Contains(comida);
         }
 
         public static bool operator !=(Cliente cliente, Comida comida)
