@@ -1,6 +1,6 @@
 ﻿namespace Gonzalez.Juan.Pablo._2C.RPP
 {
-    partial class FrmHamburgueseria
+    partial class FrmView
     {
         /// <summary>
         ///  Required designer variable.
@@ -35,11 +35,11 @@
             btnAgregarGuarnicion = new Button();
             gpbIngredientes = new GroupBox();
             btnAgregarIngredientes = new Button();
-            rdbIngredienteDos = new RadioButton();
+            rdbGuarnicion = new RadioButton();
             lblIngredientes = new Label();
-            rdbIngredienteUno = new RadioButton();
+            rdbHamburguesa = new RadioButton();
             cmbIngredientes = new ComboBox();
-            rctbSalida = new RichTextBox();
+            rchTicket = new RichTextBox();
             txtDniCliente = new TextBox();
             gpbIngredientes.SuspendLayout();
             SuspendLayout();
@@ -61,6 +61,7 @@
             cmbGuarnicion.Name = "cmbGuarnicion";
             cmbGuarnicion.Size = new Size(210, 23);
             cmbGuarnicion.TabIndex = 2;
+            cmbGuarnicion.SelectedIndexChanged += cmbGuarnicion_SelectedIndexChanged;
             // 
             // lstHamburguesas
             // 
@@ -70,6 +71,7 @@
             lstHamburguesas.Name = "lstHamburguesas";
             lstHamburguesas.Size = new Size(268, 64);
             lstHamburguesas.TabIndex = 3;
+            lstHamburguesas.MouseDoubleClick += lstHamburguesas_MouseDoubleClick;
             // 
             // lblSeleccionGuarnicion
             // 
@@ -90,13 +92,14 @@
             btnAgregarGuarnicion.TabIndex = 5;
             btnAgregarGuarnicion.Text = "+";
             btnAgregarGuarnicion.UseVisualStyleBackColor = true;
+            btnAgregarGuarnicion.Click += btnAgregarGuarnicion_Click;
             // 
             // gpbIngredientes
             // 
             gpbIngredientes.Controls.Add(btnAgregarIngredientes);
-            gpbIngredientes.Controls.Add(rdbIngredienteDos);
+            gpbIngredientes.Controls.Add(rdbGuarnicion);
             gpbIngredientes.Controls.Add(lblIngredientes);
-            gpbIngredientes.Controls.Add(rdbIngredienteUno);
+            gpbIngredientes.Controls.Add(rdbHamburguesa);
             gpbIngredientes.Controls.Add(cmbIngredientes);
             gpbIngredientes.Location = new Point(297, 81);
             gpbIngredientes.Name = "gpbIngredientes";
@@ -113,17 +116,18 @@
             btnAgregarIngredientes.TabIndex = 9;
             btnAgregarIngredientes.Text = "+";
             btnAgregarIngredientes.UseVisualStyleBackColor = true;
+            btnAgregarIngredientes.Click += btnAgregarIngredientes_Click;
             // 
-            // rdbIngredienteDos
+            // rdbGuarnicion
             // 
-            rdbIngredienteDos.AutoSize = true;
-            rdbIngredienteDos.Location = new Point(6, 47);
-            rdbIngredienteDos.Name = "rdbIngredienteDos";
-            rdbIngredienteDos.Size = new Size(83, 19);
-            rdbIngredienteDos.TabIndex = 1;
-            rdbIngredienteDos.TabStop = true;
-            rdbIngredienteDos.Text = "Guarnición";
-            rdbIngredienteDos.UseVisualStyleBackColor = true;
+            rdbGuarnicion.AutoSize = true;
+            rdbGuarnicion.Location = new Point(6, 47);
+            rdbGuarnicion.Name = "rdbGuarnicion";
+            rdbGuarnicion.Size = new Size(83, 19);
+            rdbGuarnicion.TabIndex = 1;
+            rdbGuarnicion.TabStop = true;
+            rdbGuarnicion.Text = "Guarnición";
+            rdbGuarnicion.UseVisualStyleBackColor = true;
             // 
             // lblIngredientes
             // 
@@ -135,16 +139,16 @@
             lblIngredientes.TabIndex = 8;
             lblIngredientes.Text = "Ingredientes";
             // 
-            // rdbIngredienteUno
+            // rdbHamburguesa
             // 
-            rdbIngredienteUno.AutoSize = true;
-            rdbIngredienteUno.Location = new Point(6, 22);
-            rdbIngredienteUno.Name = "rdbIngredienteUno";
-            rdbIngredienteUno.Size = new Size(100, 19);
-            rdbIngredienteUno.TabIndex = 0;
-            rdbIngredienteUno.TabStop = true;
-            rdbIngredienteUno.Text = "Hamburguesa";
-            rdbIngredienteUno.UseVisualStyleBackColor = true;
+            rdbHamburguesa.AutoSize = true;
+            rdbHamburguesa.Location = new Point(6, 22);
+            rdbHamburguesa.Name = "rdbHamburguesa";
+            rdbHamburguesa.Size = new Size(100, 19);
+            rdbHamburguesa.TabIndex = 0;
+            rdbHamburguesa.TabStop = true;
+            rdbHamburguesa.Text = "Hamburguesa";
+            rdbHamburguesa.UseVisualStyleBackColor = true;
             // 
             // cmbIngredientes
             // 
@@ -154,13 +158,13 @@
             cmbIngredientes.Size = new Size(212, 23);
             cmbIngredientes.TabIndex = 7;
             // 
-            // rctbSalida
+            // rchTicket
             // 
-            rctbSalida.Location = new Point(12, 220);
-            rctbSalida.Name = "rctbSalida";
-            rctbSalida.Size = new Size(571, 96);
-            rctbSalida.TabIndex = 7;
-            rctbSalida.Text = "";
+            rchTicket.Location = new Point(12, 220);
+            rchTicket.Name = "rchTicket";
+            rchTicket.Size = new Size(571, 96);
+            rchTicket.TabIndex = 7;
+            rchTicket.Text = "";
             // 
             // txtDniCliente
             // 
@@ -170,13 +174,15 @@
             txtDniCliente.Name = "txtDniCliente";
             txtDniCliente.Size = new Size(175, 29);
             txtDniCliente.TabIndex = 0;
+            txtDniCliente.TextChanged += txtDniCliente_TextChanged;
+            txtDniCliente.Leave += txtDniCliente_Leave;
             // 
-            // FrmHamburgueseria
+            // FrmView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(614, 346);
-            Controls.Add(rctbSalida);
+            Controls.Add(rchTicket);
             Controls.Add(gpbIngredientes);
             Controls.Add(btnAgregarGuarnicion);
             Controls.Add(lblSeleccionGuarnicion);
@@ -187,9 +193,10 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "FrmHamburgueseria";
+            Name = "FrmView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Hamburgueseria";
+            Load += FrmHamburgueseria_Load;
             gpbIngredientes.ResumeLayout(false);
             gpbIngredientes.PerformLayout();
             ResumeLayout(false);
@@ -204,11 +211,11 @@
         private Button btnAgregarGuarnicion;
         private GroupBox gpbIngredientes;
         private Button btnAgregarIngredientes;
-        private RadioButton rdbIngredienteDos;
+        private RadioButton rdbGuarnicion;
         private Label lblIngredientes;
-        private RadioButton rdbIngredienteUno;
+        private RadioButton rdbHamburguesa;
         private ComboBox cmbIngredientes;
-        private RichTextBox rctbSalida;
+        private RichTextBox rchTicket;
         private TextBox txtDniCliente;
     }
 }

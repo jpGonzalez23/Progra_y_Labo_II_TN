@@ -1,4 +1,4 @@
-namespace Gonzalez.Juan.Pablo._2C.RPP
+namespace RepasoTorneo
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace Gonzalez.Juan.Pablo._2C.RPP
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FrmView());
+            Application.Run(new FrmTorneo());
         }
     }
 }
