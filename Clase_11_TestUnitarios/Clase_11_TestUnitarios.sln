@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Enti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejer_44", "Ejer_44\Ejer_44.csproj", "{693D7AD6-2E68-4120-BB4D-066FB2723A75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnitario", "TestUnitario\TestUnitario.csproj", "{9B6D8743-70CE-47DD-B149-6F3F72EC68FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestUnitario", "TestUnitario\TestUnitario.csproj", "{9B6D8743-70CE-47DD-B149-6F3F72EC68FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_46", "Ejer_46\Ejer_46.csproj", "{3ACF4CCA-E182-4A1B-B22A-5A4108BE476E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejer_46", "Ejer_46\Ejer_46.csproj", "{3ACF4CCA-E182-4A1B-B22A-5A4108BE476E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
