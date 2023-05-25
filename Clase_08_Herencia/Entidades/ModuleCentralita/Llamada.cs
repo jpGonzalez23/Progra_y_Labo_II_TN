@@ -8,7 +8,7 @@ namespace Entidades.ModuleCentralita
 {
     public class Llamada
     {
-        public enum ETipoLlamada { Local, Provincíal, Todas };
+        public enum ELlamada { Local, Provincíal, Todas };
 
         protected float duracion;
         protected string nroDestino;
@@ -36,7 +36,7 @@ namespace Entidades.ModuleCentralita
             this.nroDestino = nroDestino;
         }
 
-        public string MostrarDatos()
+        public string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 

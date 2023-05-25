@@ -33,7 +33,7 @@ namespace Entidades
             {
                 double costo = 0;
 
-                this.menu.ForEach(c => totalAPagar += costo);
+                this.menu.ForEach(c => );
 
                 return costo.ToString();
             }

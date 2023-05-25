@@ -20,18 +20,18 @@ namespace Entidades.ModuleCentralita
             this.costo = costo;
         }
 
-        public Local(string origen, float duracion, string destino,  float costo) : base(duracion, destino, origen)
+        public Local(string origen, float duracion, string destino,  float costo) 
+            : base(duracion, destino, origen)
         {
 
         }
 
-        public string MostrarDatos()
+        public string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append(base.MostrarDatos());
+            sb.Append(base.Mostrar());
             sb.AppendLine($"Costo de la llamada: {this.Costo}");
-
 
             return sb.ToString();
         }

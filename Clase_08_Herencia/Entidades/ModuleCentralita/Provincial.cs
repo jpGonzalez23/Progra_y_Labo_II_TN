@@ -34,11 +34,11 @@ namespace Entidades.ModuleCentralita
             get { return this.CalcularCosto(); }
         }
 
-        public string MostrarDatos()
+        public string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append(base.MostrarDatos());
+            sb.Append(base.Mostrar());
             sb.AppendLine($"Costo de la llamada: {this.CalcularCosto()}");
             sb.AppendLine($"Franja: {this.franja}");
 
@@ -47,18 +47,22 @@ namespace Entidades.ModuleCentralita
 
         private float CalcularCosto()
         {
+            float costo = 0;
+            
             if (franja is ETipoFranja.Franja_1)
             {
-                return 0.99f * base.duracion;
+                costo = 0.99f * base.duracion;
             }
             else if (franja is ETipoFranja.Franja_2)
             {
-                return 1.25f * base.duracion;
+                costo = 1.25f * base.duracion;
             }
             else
             {
-                return 0.66f * base.duracion;
+                costo = 0.66f * base.duracion;
             }
+
+            return costo;
         }
     }
 }
