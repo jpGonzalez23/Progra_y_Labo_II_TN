@@ -1,20 +1,20 @@
 ﻿using System.Text;
 
-namespace Entidades
+namespace Entidades.Torneo
 {
     public class Torneo<T> where T : Equipos
     {
         protected List<T> equipos;
         protected string nombre;
-        
+
         /// <summary>
         /// Constructor de instacia de torneo
         /// </summary>
         /// <param name="nombre">Parametro a ingresar</param>
-        public Torneo(string nombre) 
+        public Torneo(string nombre)
         {
             this.nombre = nombre;
-            this.equipos = new List<T>();
+            equipos = new List<T>();
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace Entidades
         /// <param name="torneo">Parametro a comparar</param>
         /// <param name="equipo">Parametro a comparar</param>
         /// <returns>Retorna true si esta dentro</returns>
-        public static bool operator ==(Torneo<T> torneo, Equipos equipo) 
+        public static bool operator ==(Torneo<T> torneo, Equipos equipo)
         {
             return torneo.equipos.Contains(equipo);
         }
@@ -75,17 +75,17 @@ namespace Entidades
         /// <returns>Retorna un cadena de string que muestra los puntos del partido</returns>
         public string JugarPartido()
         {
-            int equipo1Index = new Random().Next(0, this.equipos.Count);
-            int equipo2Index = new Random().Next(0, this.equipos.Count);
-          
+            int equipo1Index = new Random().Next(0, equipos.Count);
+            int equipo2Index = new Random().Next(0, equipos.Count);
+
             while (equipo2Index == equipo1Index)
             {
-                equipo2Index = new Random().Next(0, this.equipos.Count);
+                equipo2Index = new Random().Next(0, equipos.Count);
             }
-          
-            T equipo1 = this.equipos[equipo1Index];
-            T equipo2 = this.equipos[equipo2Index];
-          
+
+            T equipo1 = equipos[equipo1Index];
+            T equipo2 = equipos[equipo2Index];
+
             return CalcularPartido(equipo1, equipo2);
         }
 
@@ -96,9 +96,9 @@ namespace Entidades
         public string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Torneo: {this.nombre}");
+            sb.AppendLine($"Torneo: {nombre}");
             sb.AppendLine("Equipos participantes: ");
-            foreach (T equipo in this.equipos)
+            foreach (T equipo in equipos)
             {
                 sb.AppendLine(equipo.Ficha());
             }

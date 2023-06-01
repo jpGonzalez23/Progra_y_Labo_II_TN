@@ -19,7 +19,7 @@ namespace Entidades.Modules
             set => this.colorTinta = value;
         }
 
-        public float UnidadesDeEscritura
+        public float UnidadDeEscritura
         {
             get => this.tinta;
             set => this.tinta = value;
@@ -39,7 +39,7 @@ namespace Entidades.Modules
 
         public bool Recargar(int unidades)
         {
-            this.UnidadesDeEscritura += unidades;
+            this.UnidadDeEscritura += unidades;
             return true;
         }
 
@@ -48,7 +48,7 @@ namespace Entidades.Modules
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("Es Bolígrafo");
-            sb.AppendLine($"Nivel de tinta: {this.UnidadesDeEscritura}");
+            sb.AppendLine($"Nivel de tinta: {this.UnidadDeEscritura}");
             sb.AppendLine($"Color de tinta: {this.Color}");
 
             return sb.ToString();

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidades
+namespace Entidades.Torneo
 {
     public abstract class Equipos
     {
@@ -16,8 +16,8 @@ namespace Entidades
         /// </summary>
         public string Nombre
         {
-            get { return this.nombre; }
-            set { this.nombre = value; }
+            get { return nombre; }
+            set { nombre = value; }
         }
 
         /// <summary>
@@ -25,8 +25,8 @@ namespace Entidades
         /// </summary>
         public DateTime Fecha
         {
-            get { return this.fecha; }
-            set { this.fecha = value; }
+            get { return fecha; }
+            set { fecha = value; }
         }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace Entidades
         /// </summary>
         /// <param name="nombre">Parametro de nombre</param>
         /// <param name="fecha">Parametro de fecha de creacion</param>
-        public Equipos(string nombre, DateTime fecha) 
+        public Equipos(string nombre, DateTime fecha)
         {
             this.nombre = nombre;
             this.fecha = fecha;
@@ -68,7 +68,7 @@ namespace Entidades
         /// <returns>Retorna una cadena de caracteres</returns>
         public string Ficha()
         {
-            return $"{this.nombre} fundado el {this.fecha.ToString("dd/MM/yyyy")}";
+            return $"{nombre} fundado el {fecha.ToString("dd/MM/yyyy")}";
         }
     }
 }

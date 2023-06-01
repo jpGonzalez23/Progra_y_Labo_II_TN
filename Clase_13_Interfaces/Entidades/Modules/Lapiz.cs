@@ -22,7 +22,7 @@ namespace Entidades.Modules
             set => throw new NotImplementedException();
         }
 
-        float IAcciones.UnidadesDeEscritura
+        float IAcciones.UnidadDeEscritura
         {
             get => this.tamanioMina;
             set => this.tamanioMina = value;
@@ -45,7 +45,7 @@ namespace Entidades.Modules
 
             sb.AppendLine("Es Lapiz");
             sb.AppendLine($"Su color es: {((IAcciones)this).Color}");
-            sb.AppendLine($"y su nivel es {((IAcciones)this).UnidadesDeEscritura}");
+            sb.AppendLine($"y su nivel es {((IAcciones)this).UnidadDeEscritura}");
 
             return sb.ToString();
         }

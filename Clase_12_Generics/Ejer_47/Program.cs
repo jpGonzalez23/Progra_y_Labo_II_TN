@@ -1,4 +1,4 @@
-﻿using Entidades;
+﻿using Entidades.Torneo;
 
 namespace Ejer_47
 {

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidades
+namespace Entidades.Torneo
 {
     public class EquipoBasquet : Equipos
     {
-        public EquipoBasquet(string nombre, DateTime fecha):base(nombre, fecha) { }
+        public EquipoBasquet(string nombre, DateTime fecha) : base(nombre, fecha) { }
     }
 }

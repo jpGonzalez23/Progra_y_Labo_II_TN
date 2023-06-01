@@ -1,4 +1,4 @@
-﻿using Entidades; 
+﻿using Entidades.DatosFactura;
 
 namespace Ejer_48
 {
@@ -8,31 +8,21 @@ namespace Ejer_48
         {
             Console.Title = "Ejercicio N°48";
 
+            Random random = new Random();
+            Factura[] factura = new Factura[10];
+            Recibo[] recibo = new Recibo[10];
             Contabilidad<Factura, Recibo> contabilidad = new Contabilidad<Factura, Recibo>();
 
-            // Agregar egresos y ingresos
-            contabilidad += new Recibo(1010);
-            contabilidad += new Factura(1001);
-
-            // Obtener la lista de egresos e ingresos
-            List<Factura> egresos = contabilidad.Egresos;
-            List<Recibo> ingresos = contabilidad.Ingresos;
-
-            // Mostrar los elementos de las listas
-            Console.WriteLine("Egresos:");
-
-            foreach (Factura egreso in egresos)
+            for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine($"Número de Factura: {egreso.Numero}");
+                factura[i] = new Factura(random.Next(0, 99999));
+                recibo[i] = new Recibo(random.Next(0, 99999));
+                contabilidad += factura[i];
+                contabilidad += recibo[i];
             }
 
-            Console.WriteLine("Ingresos:");
-            foreach (Recibo ingreso in ingresos)
-            {
-                Console.WriteLine($"Número de Recibo: {ingreso.Numero}");
-            }
-
-            Console.ReadLine();
+            Console.WriteLine(contabilidad.ToString());
+            Console.ReadKey();
         }
     }
 }

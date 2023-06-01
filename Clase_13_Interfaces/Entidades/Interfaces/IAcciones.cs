@@ -10,7 +10,7 @@ namespace Entidades.Interfaces
     public interface IAcciones
     {
         ConsoleColor Color { get; set; }
-        float UnidadesDeEscritura { get; set; }
+        float UnidadDeEscritura { get; set; }
 
         EscrituraWrapper Escribir(string texto);
 
