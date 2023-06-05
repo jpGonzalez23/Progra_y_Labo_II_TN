@@ -1,4 +1,5 @@
-﻿namespace Ejer_54
+﻿
+namespace Ejer_54
 {
     internal class Program
     {

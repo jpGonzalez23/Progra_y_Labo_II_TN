@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_57", "Ejer_57\Ejer_57.csproj", "{71DC3D0F-79B2-4119-ACE4-099E612ED602}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejer_57", "Ejer_57\Ejer_57.csproj", "{71DC3D0F-79B2-4119-ACE4-099E612ED602}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{D4D7E7C1-1B8D-474F-A769-50636C3BE0F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Entidades.csproj", "{D4D7E7C1-1B8D-474F-A769-50636C3BE0F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_I02_Cartelera", "Ejer_I02_Cartelera\Ejer_I02_Cartelera.csproj", "{40FA63A2-FEDB-409A-BB75-5612C62DDD24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D4D7E7C1-1B8D-474F-A769-50636C3BE0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4D7E7C1-1B8D-474F-A769-50636C3BE0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4D7E7C1-1B8D-474F-A769-50636C3BE0F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40FA63A2-FEDB-409A-BB75-5612C62DDD24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40FA63A2-FEDB-409A-BB75-5612C62DDD24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40FA63A2-FEDB-409A-BB75-5612C62DDD24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40FA63A2-FEDB-409A-BB75-5612C62DDD24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

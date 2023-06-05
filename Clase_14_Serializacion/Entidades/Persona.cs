@@ -1,4 +1,10 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
@@ -7,46 +13,66 @@ namespace Entidades
         private string nombre;
         private string apellido;
 
+        public Persona() { }
+
         public Persona(string nombre, string apellido)
         {
             this.nombre = nombre;
             this.apellido = apellido;
         }
 
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Apellido { get => apellido; set => apellido = value; }
+        public string Nombre { get => this.nombre; set => this.nombre = value; }
+        public string Apellido { get => this.apellido; set => this.apellido = value; }
 
-        public static void Guardar(Persona p)
+        public static bool Guardar(Persona p)
         {
+            XmlTextWriter xmlTextWriter = null;
+            XmlSerializer xmlSerializer = null;
+
             try
             {
-                string archivoInvalido = "";
-                XmlSerializer serializer = new XmlSerializer(typeof(Persona));
-                FileStream fileStream = new FileStream(archivoInvalido, FileMode.Create);
-                serializer.Serialize(fileStream, p);
-                fileStream.Close();
+                xmlTextWriter = new XmlTextWriter("ArchivoXml.xml", Encoding.UTF8);
+                xmlTextWriter.Formatting = Formatting.Indented;
+                xmlSerializer = new XmlSerializer(typeof(Persona));
+                xmlSerializer.Serialize(xmlTextWriter, p);
+                return true;
             }
-            catch (ArgumentException e)
+            catch (Exception ex)
             {
-                Console.WriteLine("Error al guardar la persona: " + e.Message);
+                throw ex;
+            }
+            finally
+            {
+                if (xmlTextWriter != null)
+                {
+                    xmlTextWriter.Close();  
+                }
             }
         }
 
-        public static Persona Leer()
+        public static Persona Leer(string archivoXml)
         {
+            XmlTextReader xmlTextReader = null;
+            XmlSerializer xmlSerializer = null; 
+
             try
             {
-                string archivoInvalido = "";
-                XmlSerializer serializer = new XmlSerializer(typeof(Persona));
-                FileStream fileStream = new FileStream(archivoInvalido, FileMode.Open);
-                Persona persona = (Persona)serializer.Deserialize(fileStream);
-                fileStream.Close();
-                return persona;
+                xmlTextReader = new XmlTextReader(archivoXml);
+
+                xmlSerializer = new XmlSerializer(typeof(Persona));
+
+                return (Persona)xmlSerializer.Deserialize(xmlTextReader);
             }
-            catch (ArgumentException e)
+            catch (Exception ex)
             {
-                Console.WriteLine("Error al leer la persona: " + e.Message);
-                return null;
+                throw ex;
+            }
+            finally
+            {
+                if (xmlTextReader != null)
+                {
+                    xmlTextReader.Close();
+                }
             }
         }
 

@@ -11,11 +11,11 @@ namespace Ejer_57
 
             try
             {
-                Persona persona1 = new Persona("John", "Doe");
-                Persona.Guardar(persona1);
-
-                Persona persona2 = Persona.Leer();
-                Console.WriteLine(persona2);
+                string archivo = "AchivoXML.xml";
+                Persona persona = new Persona("Juan Pablo", "gonzalez");
+                Persona.Guardar(persona);
+                Console.WriteLine((Persona.Leer(archivo)).ToString());
+                Console.ReadKey();
             }
             catch (SerializationException e)
             {
