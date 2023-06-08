@@ -1,0 +1,72 @@
+public void Guardar(Persona persona)
+        {
+            using (SqlConnection connection = new SqlConnection(stringConnection))
+            {
+                //connection.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO Persona (Nombre, Apellido) VALUES (@Nombre, Apellido)", connection);
+                command.Parameters.AddWithValue("@Nombre", persona.Nombre);
+                command.Parameters.AddWithValue("@Apelldio", persona.Apellido);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public List<Persona> Leer()
+        {
+            List<Persona> personas = new List<Persona>();
+
+            using (SqlConnection connection = new SqlConnection(stringConnection))
+            {
+                //connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM Persona", connection);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    personas.Add(new Persona(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
+                }
+            }
+            return personas;
+        }
+
+        public Persona LeerPorId(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(stringConnection))
+            {
+                //connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM Persona WHERE ID = @ID", connection);
+                command.Parameters.AddWithValue("@ID", id);
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string nombre = (string)reader["Nombre"];
+                    string apellido = (string)reader["Apellido"];
+                    Persona persona = new Persona(id, nombre, apellido);
+                    return persona;
+                }
+            }
+            return null;
+        }
+
+        public void Modificar(Persona persona)
+        {
+            using (SqlConnection connection = new SqlConnection(stringConnection))
+            {
+                //connection.Open();
+                SqlCommand command = new SqlCommand("UPDATE Persona SET Nombre = @Nombre, Apellido = @Apellido WHERE ID = @ID", connection);
+                command.Parameters.AddWithValue("@Nombre", persona.Nombre);
+                command.Parameters.AddWithValue("@Apellido", persona.Apellido);
+                command.Parameters.AddWithValue("@ID", persona.Id);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void Borrar(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(stringConnection))
+            {
+                //connection.Open();
+                SqlCommand command = new SqlCommand("DELETE FROM Persona WHERE ID = @ID", connection);
+                command.Parameters.AddWithValue("@ID", id);
+                command.ExecuteNonQuery();
+            }
+        }

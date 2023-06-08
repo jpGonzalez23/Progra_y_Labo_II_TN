@@ -1,4 +1,4 @@
-namespace Ejer_I02_Cartelera
+namespace Ejer_I01
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace Ejer_I02_Cartelera
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new FrmPrincipal());
         }
     }
 }

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica", "Ejer_60\Practica.csproj", "{14FFA84F-842E-4E03-8BBD-233E0524FC5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Practica", "Ejer_60\Practica.csproj", "{14FFA84F-842E-4E03-8BBD-233E0524FC5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{4C5ED353-A10A-40B2-8D2F-F56715ABC31F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Entidades.csproj", "{4C5ED353-A10A-40B2-8D2F-F56715ABC31F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_61", "Ejer_61\Ejer_61.csproj", "{26ADB082-0C8D-45DC-80A5-D5B0EC0DE06C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4C5ED353-A10A-40B2-8D2F-F56715ABC31F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C5ED353-A10A-40B2-8D2F-F56715ABC31F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C5ED353-A10A-40B2-8D2F-F56715ABC31F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26ADB082-0C8D-45DC-80A5-D5B0EC0DE06C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26ADB082-0C8D-45DC-80A5-D5B0EC0DE06C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26ADB082-0C8D-45DC-80A5-D5B0EC0DE06C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26ADB082-0C8D-45DC-80A5-D5B0EC0DE06C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
