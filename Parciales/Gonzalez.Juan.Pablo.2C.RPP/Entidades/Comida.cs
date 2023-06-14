@@ -10,7 +10,7 @@ namespace Entidades
             QUESO = 10,
             CEBOLLA = 8,
             LECHUGA = 7,
-            TOMATE=9,
+            TOMATE = 9,
             JAMON = 12,
             HUEVO = 13,
             PANCETA = 15
@@ -57,8 +57,12 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine($"Nombre: {this.Nombre}");
-            sb.AppendLine($"Ingresites: {this.Descripcion}");
             sb.AppendLine($"Costo: {this.Costo}");
+            sb.AppendLine($"Ingresites: ");
+            foreach (EIngredientes item in this.ingredientes)
+            {
+                sb.Append(item.ToString());
+            }
 
             return sb.ToString();
         }

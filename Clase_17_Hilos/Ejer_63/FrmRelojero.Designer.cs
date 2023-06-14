@@ -1,6 +1,6 @@
 ﻿namespace Ejer_63
 {
-    partial class Form1
+    partial class FrmRelojero
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,43 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            richTextBox1 = new RichTextBox();
-            label1 = new Label();
+            rctbMostrar = new RichTextBox();
+            lblHora = new Label();
             SuspendLayout();
             // 
-            // richTextBox1
+            // rctbMostrar
             // 
-            richTextBox1.Location = new Point(12, 12);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(387, 179);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
+            rctbMostrar.Location = new Point(12, 27);
+            rctbMostrar.Name = "rctbMostrar";
+            rctbMostrar.Size = new Size(387, 179);
+            rctbMostrar.TabIndex = 0;
+            rctbMostrar.Text = "";
             // 
-            // label1
+            // lblHora
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(23, 15);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 1;
-            label1.Text = "label1";
+            lblHora.Location = new Point(12, 9);
+            lblHora.Name = "lblHora";
+            lblHora.Size = new Size(387, 15);
+            lblHora.TabIndex = 1;
             // 
-            // Form1
+            // FrmRelojero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(416, 210);
-            Controls.Add(label1);
-            Controls.Add(richTextBox1);
-            Name = "Form1";
-            Text = "Form1";
+            ClientSize = new Size(411, 217);
+            Controls.Add(lblHora);
+            Controls.Add(rctbMostrar);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "FrmRelojero";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Reloj";
+            Load += FrmRelojero_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private RichTextBox richTextBox1;
-        private Label label1;
+        private RichTextBox rctbMostrar;
+        private Label lblHora;
     }
 }

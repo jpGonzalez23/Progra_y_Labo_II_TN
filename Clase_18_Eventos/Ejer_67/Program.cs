@@ -1,4 +1,4 @@
-namespace Ejer_63
+namespace Ejer_67
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace Ejer_63
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FrmRelojero());
+            Application.Run(new Form1());
         }
     }
 }

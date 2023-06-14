@@ -31,11 +31,12 @@ namespace Entidades
         {
             get 
             {
-                double costo = 0;
+                double costo;
 
-                this.menu.ForEach(c => );
+                foreach (var item in collection)
+                {
 
-                return costo.ToString();
+                }
             }
         }
 
