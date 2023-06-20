@@ -16,17 +16,28 @@ namespace Entidades
         private short ubicacion;
         private object controlVisual;
 
+        /// <summary>
+        /// 
+        /// </summary>
         static Juego()
         {
             Juego.velocidad = 8;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ubicacion"></param>
+        /// <param name="objetoVisual"></param>
         public Juego(short ubicacion, object objetoVisual)
         {
             this.ubicacion = ubicacion;
             this.controlVisual = objetoVisual;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [System.Text.Json.Serialization.JsonIgnore]
         public object ControlVisual
         {
@@ -40,6 +51,15 @@ namespace Entidades
             }
         }
 
+        public short Ubicacion { get => this.ubicacion; set => this.ubicacion = value; }
+        public static short Velocidad { get => Juego.velocidad; set => Juego.velocidad = value; }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public short Avanzar()
         {
             this.ubicacion += velocidad;
@@ -53,6 +73,10 @@ namespace Entidades
         {
             do
             {
+                this.ubicacion += Juego.velocidad;
+
+                InformarAvance.Invoke(this, this.ubicacion);
+
                 System.Threading.Thread.Sleep(60 + Juego.velocidad);
             } while (true);
         }

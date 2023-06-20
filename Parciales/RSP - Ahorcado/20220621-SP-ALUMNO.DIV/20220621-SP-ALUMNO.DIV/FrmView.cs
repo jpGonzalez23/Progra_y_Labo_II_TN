@@ -41,10 +41,10 @@ namespace _20220621_SP_ALUMNO.DIV
 
         }
 
-        private void Ahorcado_OnPalabra(string palabra)
-        {
-            throw new NotImplementedException();
-        }
+        //private void Ahorcado_OnPalabra(string palabra)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
@@ -114,11 +114,12 @@ namespace _20220621_SP_ALUMNO.DIV
         {
             try
             {
-                FileManager.Guardar<Ahorcado<Pais>>(this.ahorcado, "ahorcado.json");
+                FileManager.Guardar<Ahorcado<Pais>>(this.ahorcado, "GonzalezJP.json");
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error al intentar de serializarlo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al intentar de serializarlo", "Error", 
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

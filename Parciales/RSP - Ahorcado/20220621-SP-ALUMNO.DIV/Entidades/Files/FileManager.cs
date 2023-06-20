@@ -38,7 +38,8 @@ namespace Entidades.Files
         static FileManager() 
         {
             FileManager.path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            FileManager.path += @"\JuanPabloGonzalez\\";
+            FileManager.path += "\\Juan_Pablo_Gonzalez\\";
+            ValidaExistenciaDeDirectorio();
         }
 
         /// <summary>

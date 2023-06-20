@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
+using Newtonsoft.Json;
 
 namespace View
 {
@@ -16,7 +21,8 @@ namespace View
         public FrmView()
         {
             InitializeComponent();
-
+            this.json = new JsonFiler<List<Juego>>();
+            this.juegos = new List<Juego>();
         }
 
         private void FrmView_Load(object sender, EventArgs e)
@@ -24,10 +30,17 @@ namespace View
             // Leo mis juegos del archivo
 
             this.InitializeJuegos();
+            
+            if (File.Exists(archivoPath))
+            {
+                string json = File.ReadAllText(archivoPath);
+                juegos = JsonConvert.DeserializeObject<List<Juego>>(json);
+            }
 
             foreach (Juego p in this.juegos)
             {
                 // Asociar Evento
+                p.InformarAvance += AvanceJuegos;
 
                 PictureBox pic = (PictureBox)p.ControlVisual;
                 pic.Location = this.CalcularUbicacion(pic.Location, p.Ubicacion);
@@ -45,6 +58,8 @@ namespace View
 
         private void btnSimular_Click(object sender, EventArgs e)
         {
+            Task task = new Task();
+
             if (!this.ejecutando)
             {
                 // Iniciar hilos
