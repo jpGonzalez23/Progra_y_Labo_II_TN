@@ -8,6 +8,5 @@
 
         void FinalizarPreparacion(string cocinero);
         void IniciarPreparacion();
-
     }
 }

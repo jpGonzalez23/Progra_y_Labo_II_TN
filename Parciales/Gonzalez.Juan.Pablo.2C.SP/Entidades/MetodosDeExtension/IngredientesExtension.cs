@@ -3,17 +3,16 @@ using System.Linq;
 
 namespace Entidades.MetodosDeExtension
 {
-    public class IngredientesExtension
+    public static class IngredientesExtension
     {
-        public double CalcularCostoIngredientes(List<EIngrediente> ingredientes, int costoInicial)
+        public static double CalcularCostoIngredientes(this List<EIngrediente> ingredientes, int costoInicial)
         {
-            foreach (EIngrediente ingrediente in ingredientes)
-            {
-                return costoInicial * ((int)ingrediente / 100);
-            }
+            ingredientes.ForEach(ingrediente => costoInicial += (costoInicial * (int)ingrediente / 100));
+            
+            return costoInicial;
         }
 
-        public List<EIngrediente> IngredientesAletorios(Random ramdom)
+        public static List<EIngrediente> IngredientesAletorios(this Random ramdom)
         {
             List<EIngrediente> ingredientes = new List<EIngrediente>()
             {
@@ -24,8 +23,33 @@ namespace Entidades.MetodosDeExtension
                 EIngrediente.ADHERESO
             };
 
-            ramdom.Next(1, ingredientes.Count + 1);
-            return ingredientes.Take("acá va el numero aleatorio").ToList();
+            int cant = ramdom.Next(1, ingredientes.Count + 1);
+
+            return ingredientes.Take(cant).ToList();
         }
+
+        //public double CalcularCostoIngredientes(List<EIngrediente> ingredientes, int costoInicial)
+        //{
+        //   foreach (EIngrediente ingrediente in ingredientes)
+        //   {
+        //       costoInicial += costoInicial * (int)ingrediente / 100;
+        //   }
+        //    return costoInicial;
+        //}
+
+        //public List<EIngrediente> IngredientesAletorios(Random ramdom)
+        //{
+        //    List<EIngrediente> ingredientes = new List<EIngrediente>()
+        //    {
+        //        EIngrediente.QUESO,
+        //        EIngrediente.JAMON,
+        //        EIngrediente.PANCETA,
+        //        EIngrediente.HUEVO,
+        //        EIngrediente.ADHERESO
+        //    };
+
+        //    ramdom.Next(1, ingredientes.Count + 1);
+        //    return ingredientes.Take("acá va el numero aleatorio").ToList();
+        //}
     }
 }

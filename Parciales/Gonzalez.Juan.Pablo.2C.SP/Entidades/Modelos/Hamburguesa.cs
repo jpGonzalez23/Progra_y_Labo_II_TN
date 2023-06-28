@@ -5,6 +5,7 @@ using Entidades.Files;
 using Entidades.Interfaces;
 using Entidades.MetodosDeExtension;
 using System.Text;
+using Entidades.DataBase;
 
 namespace Entidades.Modelos
 {
@@ -20,8 +21,8 @@ namespace Entidades.Modelos
         Random random;
         static Hamburguesa() => Hamburguesa.costoBase = 1500;
 
-
         public Hamburguesa() : this(false) { }
+
         public Hamburguesa(bool esDoble)
         {
             this.esDoble = esDoble;
@@ -31,55 +32,73 @@ namespace Entidades.Modelos
         public string Ticket => $"{this}\nTotal a pagar:{this.costo}";
 
         public bool Estado => this.estado;
-        public string Imagen => this.imagen;
 
+        public string Imagen => this.imagen;
 
         private void AgregarIngredientes()
         {
-            IngredientesExtension ingredienteExtension = new IngredientesExtension();
+            //IngredientesExtension ingredienteExtension = new IngredientesExtension();
+            //this.random = new Random();
+            //this.ingredientes = ingredienteExtension.IngredientesAletorios(random);
 
-            this.random = new Random();
-
-            this.ingredientes = ingredienteExtension.IngredientesAletorios(random);
+            this.ingredientes = this.random.IngredientesAletorios();
         }
 
         private string MostrarDatos()
         {
             StringBuilder stringBuilder = new StringBuilder();
+            
             stringBuilder.AppendLine($"Hamburguesa {(this.esDoble ? "Doble" : "Simple")}");
             stringBuilder.AppendLine("Ingredientes: ");
+            
             this.ingredientes.ForEach(i => stringBuilder.AppendLine(i.ToString()));
+
             return stringBuilder.ToString();
-
         }
-
-
 
         public override string ToString() => this.MostrarDatos();
 
         public void FinalizarPreparacion(string cocinero)
         {
-            if (this.Estado)
-            {
-                IngredientesExtension ingredientesExtencion = new IngredientesExtension();
-                this.costo = ingredientesExtencion.CalcularCostoIngredientes(this.ingredientes, Hamburguesa.costoBase);
+            //if (this.Estado)
+            //{
+            //    IngredientesExtension ingredientesExtencion = new IngredientesExtension();
+            //    this.costo = ingredientesExtencion.CalcularCostoIngredientes(this.ingredientes, Hamburguesa.costoBase);
 
-                this.estado = false;
-            }
+            //    this.estado = false;
+            //}
+
+            this.costo = this.ingredientes.CalcularCostoIngredientes(Hamburguesa.costoBase);
+            this.estado = !this.estado;
         }
 
         public void IniciarPreparacion()
         {
+            //if (!this.Estado)
+            //{
+            //    this.random = new Random();
+            //    this.random.Next(1, 9);
+
+            //    string imagen = $"Hamburguesa_{"Acá va el numero aleatorio"}";
+
+            //    DataBaseManager.GetImagenComida(imagen);
+            //    this.AgregarIngredientes();
+            //    this.estado = true;
+            //}
+
             if (!this.Estado)
             {
-                this.random = new Random();
-                this.random.Next(1, 9);
-
-                string imagen = $"Hamburguesa_{"Acá va el numero aleatorio"}";
-
-                DataBaseManager.GetImagenComida(imagen);
-                this.AgregarIngredientes();
-                this.estado = true;
+                int indice = this.random.Next(1, 9);
+                
+                try
+                {
+                    this.imagen = DataBaseManager.GetImagenComida($"Hamburguesa {indice}");
+                    this.AgregarIngredientes();
+                }
+                catch(DataBaseManagerException ex)
+                {
+                    FileManager.Guardar(ex.Message, "logs.txt", true);
+                }
             }
         }
     }

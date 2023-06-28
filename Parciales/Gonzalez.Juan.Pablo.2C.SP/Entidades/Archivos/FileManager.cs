@@ -19,8 +19,11 @@ namespace Entidades.Files
 
         static FileManager()
         {
-            FileManager.path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            FileManager.path += "\\Jua_Pablo_Gonzalez\\";
+            //FileManager.path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            //FileManager.path += "\\Jua_Pablo_Gonzalez\\";
+
+            FileManager.path = $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\20230622_Gonzalez_JP\\";
+
             FileManager.ValidarExistenciaDeDirectorio();
         }
 
@@ -34,39 +37,62 @@ namespace Entidades.Files
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error al crear el directorio\n", ex);
+                    throw new FileManagerException("Error al crear el directorio\n", ex);
                 }
             }
         }
 
         public static void Guardar(string data, string nombreArchivo, bool append)
         {
-            using (StreamWriter sw = new StreamWriter(FileManager.path + nombreArchivo))
+            //using (StreamWriter sw = new StreamWriter(FileManager.path + nombreArchivo))
+            //{
+            //    if (Path.GetExtension(nombreArchivo) == ".txt")
+            //    {
+            //        sw.WriteLine(data);
+            //    }
+            //    else
+            //    {
+            //        throw new FileManagerException("Entencion no valida");
+            //    }
+            //}
+
+            try
             {
-                if (Path.GetExtension(nombreArchivo) == ".txt")
+                using (StreamWriter sw = new StreamWriter(FileManager.path + nombreArchivo, append))
                 {
                     sw.WriteLine(data);
                 }
-                else
-                {
-                    throw new FileManagerException("Entencion no valida");
-                }
+            }
+            catch(Exception ex)
+            {
+                throw new FileManagerException("Erro al guardar un archivo de texto\n", ex);
+                
             }
         }
 
         public static bool Serializar<T>(T elementos, string nombreArchivo)
             where T : class
         {
+            //try
+            //{
+            //    string json = File.ReadAllText(FileManager.path + nombreArchivo);
+            //    JsonConvert.DeserializeObject<T>(json);
+            //    return true;
+            //}
+            //catch(Exception ex)
+            //{
+            //    throw new FileManagerException("Error al serializar archivo", ex);
+            //    return false;
+            //}
+
             try
             {
-                string json = File.ReadAllText(FileManager.path + nombreArchivo);
-                JsonConvert.DeserializeObject<T>(json);
+                FileManager.Guardar(System.Text.Json.JsonSerializer.Serialize(elementos, typeof(T)), nombreArchivo, false);
                 return true;
             }
             catch(Exception ex)
             {
-                throw new FileManagerException("Error al serializar archivo", ex);
-                return false;
+                throw new FileManagerException("Error al serializar ", ex);
             }
         }
     }
